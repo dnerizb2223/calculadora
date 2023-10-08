@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Primera Pràctica</title>
+        <meta name="description" content="Calculadora de Propina">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style/css.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="js/js.js"></script>
+    </head>
+    <body>
+        <form id="calculatorForm" onsubmit="return validarFormulario()">
+            <div class="mb-3">
+                <label for="personasInput" class="form-label">Calculadora de Propina</label>
+            </div>
+            <div class="mb-3">
+                <label for="personasInput" class="form-label">Nombre de Persones</label>
+                <input type="text" class="form-control" id="personasInput" oninput="validarPersonas()" placeholder="Quantitat de persones">
+                <div class="invalid-feedback" id="personasError"></div>
+            </div>
+            <div class="mb-3">
+                <label for="totalInput" class="form-label">Total de la Comanda</label>
+                <input type="text" class="form-control" id="totalInput" oninput="validarTotal()" placeholder="Import total de la comanda">
+                <div class="invalid-feedback" id="totalError"></div>
+            </div>
+            <div class="mb-3">
+                <label for="valoracioInput" class="form-label">Valoració del Servei</label>
+                <select class="form-select" aria-label="Selecciona una valoració" id="valoracioInput">
+                    <option value="" disabled selected>Selecciona una valoració</option>
+                    <option value="dolenta">Dolenta</option>
+                    <option value="mediocre">Mediocre</option>
+                    <option value="excelent">Excel·lent</option>
+                </select>
+                <div class="invalid-feedback" id="valoracioError"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular Propina</button>
+          </form>
+    </body>
+</html>
